@@ -1,0 +1,30 @@
+{
+  "name": "3-9-angular-express-api",
+  "version": "1.0.0",
+  "homepage": "https://github.com/samhamm/CF-Mar9-angular-express-api",
+  "authors": [
+    "samhamm <samhamm@gmail.com>"
+  ],
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator (build an Angular API with Express and Mongo",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "chai": "~2.1.0",
+    "angular": "~1.3.14"
+  },
+  "devDependencies": {
+    "chai": "~2.1.0"
+  }
+}

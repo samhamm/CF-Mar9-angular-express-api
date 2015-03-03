@@ -1,0 +1,23 @@
+{
+  "name": "3-9-angular-express-api",
+  "version": "1.0.0",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator (build an Angular API using Express and MongoDB)",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samhamm/CF-Mar9-angular-express-api"
+  },
+  "author": "Sam Hamm <samhamm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samhamm/CF-Mar9-angular-express-api/issues"
+  },
+  "homepage": "https://github.com/samhamm/CF-Mar9-angular-express-api"
+}
