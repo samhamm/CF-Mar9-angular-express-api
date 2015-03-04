@@ -23,7 +23,6 @@ coverage
 build/Release
 
 # Dependency directories
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 bower_components
 
@@ -31,5 +30,9 @@ bower_components
 *.DS_Store
 
 # Mongo DB directories
-db-pets
+db
 db-test
+
+* Build stuff
+build/
+test-bundle.js
