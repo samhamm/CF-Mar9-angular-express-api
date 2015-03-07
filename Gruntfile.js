@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
+
     jshint: {
       options: {
         node: true
@@ -15,37 +16,43 @@ module.exports = function(grunt) {
     },
 
     simplemocha: {
-      src: ['test/api/**/*.js']
+      src: ['test/**/*.js']
     },
 
     clean: {
-      src: ['build/']
+      build: {
+        src: ['build/']
+      }
     },
 
     copy: {
-      dev: {
-        cwd: 'app/',
+      build: {
         expand: true,
-        src: ['**/*.html'],
-        dest: 'build/'
+        cwd: 'app',
+        src: '**/*.html',
+        dest: 'build/',
+        flatten: false,
+        filter: 'isFile'
       }
     },
 
     browserify: {
       dev: {
         src: ['app/js/**/*.js'],
-        dest: 'build/client_bundle.js',
-        options: {
-          transform: ['debowerify']
-        }
+        dest: 'build/bundle.js',
       },
 
       test: {
-        src: ['test/client/**/*.js'],
-        dest: 'test/angular_testbundle.js',
-        options: {
+        src: ['test/client-side/**/*.js'],
+        dest: 'test/angular-testbundle.js',
+      },
+      options: {
           transform: ['debowerify']
         }
+      }
+      karmatest: {
+        src: ['test/karma-tests/*-test.js'],
+        dest: 'test/karma-tests/karma-test-bundle.js'
       }
     },
 
@@ -56,7 +63,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('test', ['jshint', 'simplemocha']);
-  grunt.registerTask('test:client', ['browserify:test', 'karma:unit']);
-  grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'copy:dev']);
+  grunt.registerTask('build', ['clean', 'browserify', 'copy']);
+  grunt.registerTask('build:test', ['browserify:test']);
+  grunt.registerTask('test:client', ['browserify:karmatest', 'karma:unit']);
+
 };
