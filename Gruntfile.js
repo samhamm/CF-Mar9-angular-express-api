@@ -1,32 +1,62 @@
-'use strict';
-
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     jshint: {
-      dev: {
-        options: {
-          node: true,
-          globals: {
-            describe: true,
-            it: true,
-            before: true,
-            after: true
-          }
-        },
-        src: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js', '*.js']
-      }
+      options: {
+        node: true
+      },
+      src: ['models/**/*.js', 'server.js', 'routes/**/*.js', 'app/js/**/*.js', 'test/**/*.js']
     },
 
     simplemocha: {
-      all: {
-        src: ['test/**/*.js']
+      src: ['test/api/**/*.js']
+    },
+
+    clean: {
+      src: ['build/']
+    },
+
+    copy: {
+      dev: {
+        cwd: 'app/',
+        expand: true,
+        src: ['**/*.html'],
+        dest: 'build/'
+      }
+    },
+
+    browserify: {
+      dev: {
+        src: ['app/js/**/*.js'],
+        dest: 'build/client_bundle.js',
+        options: {
+          transform: ['debowerify']
+        }
+      },
+
+      test: {
+        src: ['test/client/**/*.js'],
+        dest: 'test/angular_testbundle.js',
+        options: {
+          transform: ['debowerify']
+        }
+      }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
       }
     }
   });
 
-  grunt.registerTask('test', ['jshint:dev', 'simplemocha:all']);
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('test', ['jshint', 'simplemocha']);
+  grunt.registerTask('test:client', ['browserify:test', 'karma:unit']);
+  grunt.registerTask('build', ['jshint', 'clean', 'browserify', 'copy:dev']);
 };
