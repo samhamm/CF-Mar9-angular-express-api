@@ -14,19 +14,19 @@ var router = express.Router();
 // process.env.MONGO_URI is a Node way to get the Uniform Resource Identifier
 // mongodb:// required prefix to identify this is a string in std conn format
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/pets-app-development');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/logs-app-development');
 
 // ***HTTP REST definitions live in this module
-// Originally, Tyler had all of pets-routes in this file
+// Originally, Tyler had all of logs-routes in this file
 // Making it into a module keeps things cleaner
-var petsRoutes = require('./routes/pets-routes');
+var logsRoutes = require('./routes/logs-routes');
 
 // ***Bring the pieces together: myRoutesModuleUsing(express.Router())
-petsRoutes(router);
+logsRoutes(router);
 
 // http://expressjs.com/api.html#router.use
 // '/api/v1' is the version for our app and will be appended to the route
-// this app will be localhost:3000/api/v1/pets
+// this app will be localhost:3000/api/v1/logs
 app.use('/api/v1', router);
 
 // ***Tell the server where to listen
