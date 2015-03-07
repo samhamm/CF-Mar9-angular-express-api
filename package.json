@@ -1,7 +1,7 @@
 {
   "name": "3-9-angular-express-api",
   "version": "1.0.0",
-  "description": "Assignment for Code Fellows JavaScript Development Accelerator (build an Angular API using Express and MongoDB)",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator (Create a single resource rest API with Express and MongoDB and a client side built using Angular.)",
   "main": "server.js",
   "directories": {
     "test": "test"

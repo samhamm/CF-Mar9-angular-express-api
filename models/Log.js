@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 var logSchema = new mongoose.Schema({
   name: String,
-  date: Number,
+  date: String,
   content: String
 });
 

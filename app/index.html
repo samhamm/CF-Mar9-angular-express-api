@@ -1,8 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title></title>
+  <meta charset="UTF-8">
+  <title>Hello From Html</title>
 </head>
-<body>
+<body data-ng-app="logsApp">
+  <main data-ng-controller="logsController" data-ng-init="getAll()">
+    <h1>Logs:</h1>
+    <form name="newLogName">
+      <label for="newLogBody">New Log</label>
+      <input type="text" id="newLogBody" data-ng-model="newLog.logBody">
+      <button type="submit" data-ng-click="create(newLog)">Save New Log</button>
+    </form>
+    <ul data-ng-repeat="log in logs">
+      <li>
+        {{log.logBody}}
+        <form data-ng-if="log.editing">
+          <label for="log{{log._id}}">Edit Log</label>
+          <input type="text" id="log{{log._id}}" data-ng-model="log.logBody">
+          <button type="submit" data-ng-click="save(log)">Save Changes</button>
+          <button type="button" data-ng-click="editToggle(log)">Cancel</button>
+        </form>
+        <button data-ng-click="editToggle(log)" data-ng-if="!log.editing">Edit Log</button>
+        <button data-ng-click="remove(log)">Delete Log</button>
+      </li>
+    </ul>
+  </main>
 
+  <script src="bundle.js"></script>
 </body>
 </html>
