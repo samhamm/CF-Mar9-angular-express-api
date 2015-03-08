@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Captain's Log...</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body data-ng-app="capLogsApp">
+  <img src="img/logo.png" align="center">
   <main data-ng-controller="capLogsController" data-ng-init="getAll()">
-    <h1>Captain's Logs:</h1>
+    <h1>Captain's Logs</h1>
     <form name="newLogName">
-      <label for="newLogBody">New Log</label>
+      <label for="newLogBody">
+        <p>I am, Captiain... JamesTKirkof...the, Starship; Enterprise.</p>
+        <p>These... are, my... ... ...logs.</p>
+      </label>
       <input type="text" id="newLogBody" data-ng-model="newLog.capLogBody">
       <button type="submit" data-ng-click="create(newLog)">Save New Log</button>
     </form>
