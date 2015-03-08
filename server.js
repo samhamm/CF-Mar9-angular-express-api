@@ -2,13 +2,13 @@
 
 var express = require('express');
 var app = express();
+var capLogsRoutes = require('./routes/capLogs-routes');
 var router = express.Router();
-
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/logs-app-development');
 
-var logsRoutes = require('./routes/logs-routes');
-logsRoutes(router);
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/capLogs-app-development');
+
+capLogsRoutes(router);
 
 app.use('/api/v1', router);
 

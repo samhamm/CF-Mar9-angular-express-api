@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "homepage": "https://github.com/samhamm/CF-Mar9-angular-express-api",
   "authors": [
-    "samhamm <samhamm@gmail.com>"
+    "Sam Hamm <samhamm@gmail.com>"
   ],
-  "description": "Assignment for Code Fellows JavaScript Development Accelerator (build an Angular API with Express and Mongo",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator (Create a single resource rest API with Express and MongoDB and a client side built using Angular.)",
   "main": "server.js",
-  "moduleType": [
-    "node"
-  ],
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -25,6 +22,7 @@
     "angular": "~1.3.14"
   },
   "devDependencies": {
-    "chai": "~2.1.0"
+    "chai": "~2.1.0",
+    "angular-mocks": "~1.3.14"
   }
 }

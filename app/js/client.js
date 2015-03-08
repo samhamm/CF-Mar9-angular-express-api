@@ -1,8 +1,8 @@
 
 'use strict';
 
-require('angular/angular');
+var angular = require('angular/angular');
 
-var logsApp = angular.module('logsApp', []);
+var capLogsApp = angular.module('capLogsApp', []);
 
-require('./logs/controllers/logs_controller')(logsApp);
+require('./capLogs/controllers/capLogs_controller')(capLogsApp);

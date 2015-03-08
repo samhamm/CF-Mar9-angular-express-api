@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello From Html</title>
+  <title>Captain's Log...</title>
 </head>
-<body data-ng-app="logsApp">
-  <main data-ng-controller="logsController" data-ng-init="getAll()">
-    <h1>Logs:</h1>
+<body data-ng-app="capLogsApp">
+  <main data-ng-controller="capLogsController" data-ng-init="getAll()">
+    <h1>Captain's Logs:</h1>
     <form name="newLogName">
       <label for="newLogBody">New Log</label>
-      <input type="text" id="newLogBody" data-ng-model="newLog.logBody">
+      <input type="text" id="newLogBody" data-ng-model="newLog.capLogBody">
       <button type="submit" data-ng-click="create(newLog)">Save New Log</button>
     </form>
-    <ul data-ng-repeat="log in logs">
+    <ul data-ng-repeat="capLog in capLogs">
       <li>
-        {{log.logBody}}
-        <form data-ng-if="log.editing">
-          <label for="log{{log._id}}">Edit Log</label>
-          <input type="text" id="log{{log._id}}" data-ng-model="log.logBody">
-          <button type="submit" data-ng-click="save(log)">Save Changes</button>
-          <button type="button" data-ng-click="editToggle(log)">Cancel</button>
+        {{capLog.capLogBody}}
+        <form data-ng-if="capLog.editing">
+          <label for="capLog{{capLog._id}}">Edit Log</label>
+          <input type="text" id="capLog{{capLog._id}}" data-ng-model="capLog.capLogBody">
+          <button type="submit" data-ng-click="save(capLog)">Save Changes</button>
+          <button type="button" data-ng-click="editToggle(capLog)">Cancel</button>
         </form>
-        <button data-ng-click="editToggle(log)" data-ng-if="!log.editing">Edit Log</button>
-        <button data-ng-click="remove(log)">Delete Log</button>
+        <button data-ng-click="editToggle(capLog)" data-ng-if="!capLog.editing">Edit Log</button>
+        <button data-ng-click="remove(capLog)">Delete Log</button>
       </li>
     </ul>
   </main>
