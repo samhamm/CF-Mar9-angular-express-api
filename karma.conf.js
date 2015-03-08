@@ -7,12 +7,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
-      'test/angular_testbundle.js'
+      'test/karma-tests/angular-testbundle.js'
     ],
 
-    exclude: [
-      '**/*.swp'
-    ],
+    exclude: [],
 
     preprocessors: {},
 

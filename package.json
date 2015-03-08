@@ -1,14 +1,13 @@
 {
   "name": "3-9-angular-express-api",
   "version": "1.0.0",
-  "description": "Assignment for Code Fellows JavaScript Development Accelerator (build an Angular API using Express and MongoDB)",
+  "description": "Assignment for Code Fellows JavaScript Development Accelerator (Create a single resource rest API with Express and MongoDB and a client side built using Angular.)",
   "main": "server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
-    "start": "node server.js"
+    "test": "mocha test/server/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +33,7 @@
     "grunt-simple-mocha": "^0.4.0",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
+    "karma-firefox-launcher": "^0.1.4",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.1.0"

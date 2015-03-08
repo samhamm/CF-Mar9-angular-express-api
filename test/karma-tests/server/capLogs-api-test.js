@@ -24,14 +24,13 @@ describe('pets api end points', function() {
         expect(err).to.eql(null);
         expect(res.body).to.have.property('_id');
         expect(res.body.name).to.eql('Buddy');
-        // expect(res.body.color).to.eql('orange and white');
         done();
       });
   });
 
   describe('already has data in database', function() {
     var id;
-    beforeEach(function(done) {
+    before(function(done) {
       chai.request('localhost:3000/api/v1')
         .post('/pets')
         .send({name: 'Alistair'})
@@ -46,7 +45,7 @@ describe('pets api end points', function() {
         .get('/pets')
         .end(function(err, res) {
           expect(err).to.eql(null);
-          expect(Array.isArray(res.body)).to.be.true;
+          expect(Array.isArray(res.body)).to.be(true);
           expect(res.body[0]).to.have.property('name');
           done();
         });
