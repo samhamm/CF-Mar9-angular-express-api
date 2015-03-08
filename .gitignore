@@ -16,3 +16,6 @@
 **/build/
 **/test-bundle.js
 **/*bundle*
+
+# Images, for now...
+**/img/
