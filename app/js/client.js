@@ -1,7 +1,7 @@
 'use strict';
 
-var angular = require('angular/angular');
+require('angular/angular');
 
 var caplogsApp = angular.module('caplogsApp', []);
 
-require('./caplogs/controllers/caplogs-controller.js')(caplogsApp);
+require('./caplogs/controllers/caplogs-controller')(caplogsApp);
