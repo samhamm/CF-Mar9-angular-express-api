@@ -4,9 +4,9 @@ var mongoose = require('mongoose');
 
 // "Schema design is a big topic and just something you kind of have to suffer through." - Tyler, 2/18
 
-var capLogSchema = new mongoose.Schema({
-  capLogBody: String,
-  author: String,
+var caplogSchema = new mongoose.Schema({
+  caplogBody: String,
+  author: {type: String, default: 'Kirk'}
 });
 
-module.exports = mongoose.model('CapLog', capLogSchema);
+module.exports = mongoose.model('Caplog', caplogSchema);
