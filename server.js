@@ -1,17 +1,19 @@
 'use strict';
-
 var express = require('express');
-var app = express();
-var capLogsRoutes = require('./routes/capLogs-routes');
-var router = express.Router();
 var mongoose = require('mongoose');
+var caplogsRoutes = require('./routes/caplogs-routes');
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/capLogs-app-development');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/notesapp_development');
 
-capLogsRoutes(router);
+var app = express();
+app.use(express.static(__dirname + '/build'));
+
+var router = express.Router();
+
+caplogsRoutes(router);
 
 app.use('/api/v1', router);
 
 app.listen(process.env.PORT || 3000, function() {
-  console.log('The server is listening on port ' + (process.env.PORT || 3000));
+  console.log('server listening on port ' + (process.env.PORT || 3000));
 });

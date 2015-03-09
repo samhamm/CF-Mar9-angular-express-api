@@ -1,0 +1,19 @@
+body {
+    background-image: url("img/stars.png");
+}
+
+html *
+{
+   font-size: 1.05em;
+   color: #cda96b;
+   font-family: Arial, sans-serif;
+   text-align: center;
+}
+
+ul {
+list-style-type: none;
+}
+
+h1 {
+  font-size: 1.5em;
+}
