@@ -3,6 +3,6 @@
 
 var angular = require('angular/angular');
 
-var capLogsApp = angular.module('capLogsApp', []);
+var caplogsApp = angular.module('caplogsApp', []);
 
-require('./capLogs/controllers/capLogs-controller.js')(capLogsApp);
+require('./caplogs/controllers/caplogs-controller.js')(caplogsApp);

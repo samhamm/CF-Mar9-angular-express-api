@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var mongoose = require('mongoose');
-var capLogsRoutes = require('./routes/capLogs-routes');
+var caplogsRoutes = require('./routes/caplogs-routes');
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/notesapp_development');
 
@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/build'));
 
 var router = express.Router();
 
-capLogsRoutes(router);
+caplogsRoutes(router);
 
 app.use('/api/v1', router);
 

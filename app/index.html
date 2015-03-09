@@ -5,29 +5,29 @@
   <title>Captain's Log...</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body data-ng-app="capLogsApp">
+<body data-ng-app="caplogsApp">
   <img src="img/logo.png" align="center">
-  <main data-ng-controller="capLogsController" data-ng-init="getAll()">
+  <main data-ng-controller="caplogsController" data-ng-init="getAll()">
     <h1>Captain's Logs</h1>
-    <form name="newLogName">
-      <label for="newLogBody">
-        <p>I am, Captiain... JamesTKirkof...the, Starship; Enterprise.</p>
+    <form name="newCaplogName">
+      <label for="newCaplogBody">
+        <p>I am, Captain... JamesTKirkof...the, Starship; Enterprise.</p>
         <p>These... are, my... ... ...logs.</p>
       </label>
-      <input type="text" id="newLogBody" data-ng-model="newLog.capLogBody">
-      <button type="submit" data-ng-click="create(newLog)">Save New Log</button>
+      <input type="text" id="newCaplogBody" data-ng-model="newCaplog.caplogBody">
+      <button type="submit" data-ng-click="create(newCaplog)">Save New Log</button>
     </form>
-    <ul data-ng-repeat="capLog in capLogs">
+    <ul data-ng-repeat="caplog in caplogs">
       <li>
-        {{capLog.capLogBody}}
-        <form data-ng-if="capLog.editing">
-          <label for="capLog{{capLog._id}}">Edit Log</label>
-          <input type="text" id="capLog{{capLog._id}}" data-ng-model="capLog.capLogBody">
-          <button type="submit" data-ng-click="save(capLog)">Save Changes</button>
-          <button type="button" data-ng-click="editToggle(capLog)">Cancel</button>
+        {{caplog.caplogBody}}
+        <form data-ng-if="caplog.editing">
+          <label for="caplog{{caplog._id}}">Edit Log</label>
+          <input type="text" id="caplog{{caplog._id}}" data-ng-model="caplog.caplogBody">
+          <button type="submit" data-ng-click="save(caplog)">Save Changes</button>
+          <button type="button" data-ng-click="editToggle(caplog)">Cancel</button>
         </form>
-        <button data-ng-click="editToggle(capLog)" data-ng-if="!capLog.editing">Edit Log</button>
-        <button data-ng-click="remove(capLog)">Delete Log</button>
+        <button data-ng-click="editToggle(caplog)" data-ng-if="!caplog.editing">Edit Log</button>
+        <button data-ng-click="remove(caplog)">Delete Log</button>
       </li>
     </ul>
   </main>
