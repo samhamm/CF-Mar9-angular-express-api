@@ -30,6 +30,12 @@ module.exports = function(grunt) {
       }
     },
 
+    clean: {
+      build: {
+        src: ['build/']
+      }
+    },
+
     copy: {
       build: {
         expand: true,
@@ -38,12 +44,6 @@ module.exports = function(grunt) {
         dest: 'build/',
         flatten: false,
         filter: 'isFile'
-      }
-    },
-
-    clean: {
-      build: {
-        src: ['build/']
       }
     },
 

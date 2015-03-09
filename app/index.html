@@ -11,15 +11,15 @@
     <h1>Captain's Logs</h1>
     <form name="newCaplogName">
       <label for="newCaplogBody">
-        <p>I am, Captain... JamesTKirkof...the, Starship; Enterprise.</p>
-        <p>These... are, my... ... ...logs.</p>
+        <p><i>I am, Captain... JamesTKirk...of...the, Starship; Enterprise.</p>
+        <p>These... are, my... ... ...logs.</i></p>
       </label>
       <input type="text" id="newCaplogBody" data-ng-model="newCaplog.caplogBody">
       <button type="submit" data-ng-click="create(newCaplog)">Save New Log</button>
     </form>
     <ul data-ng-repeat="caplog in caplogs">
       <li>
-        {{caplog.caplogBody}}
+        {{ caplog.caplogBody }}
         <form data-ng-if="caplog.editing">
           <label for="caplog{{caplog._id}}">Edit Log</label>
           <input type="text" id="caplog{{caplog._id}}" data-ng-model="caplog.caplogBody">
