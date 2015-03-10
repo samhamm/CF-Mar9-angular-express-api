@@ -1,6 +1,6 @@
 'use strict';
 
-process.env.MONGO_URI = 'mongodb://localhost/caplogapp_test';
+process.env.MONGO_URI = 'mongodb://localhost/caplogapp-test';
 require('../../server.js');
 var mongoose = require('mongoose');
 var chai = require('chai');
@@ -8,6 +8,8 @@ var chaihttp = require('chai-http');
 chai.use(chaihttp);
 
 var expect = chai.expect;
+
+/*global describe, it, before, beforeEach, after, afterEach */
 
 describe('caplogs api end points', function() {
   after(function(done) {

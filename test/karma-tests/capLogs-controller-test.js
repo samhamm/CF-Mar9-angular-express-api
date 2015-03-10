@@ -8,6 +8,8 @@ describe('caplog-controller', function() {
   var $httpBackend;
   var $scope;
 
+  /*global describe, it, before, beforeEach, after, afterEach */
+
   beforeEach(angular.mock.module('caplogApp'));
 
   beforeEach(angular.mock.inject(function($rootScope, $controller) {

@@ -54,12 +54,12 @@ module.exports = function(grunt) {
       },
 
       test: {
-        src: ['test/client_side/*_test.js'],
-        dest: 'test/client_side/test_bundle.js'
+        src: ['test/client-side/*-test.js'],
+        dest: 'test/client-side/test-bundle.js'
       },
       karmatest: {
-        src: ['test/karma_tests/*_test.js'],
-        dest: 'test/karma_tests/karma_test_bundle.js'
+        src: ['test/karma-tests/*-test.js'],
+        dest: 'test/karma-tests/karma-test-bundle.js'
       },
       options: {
         transform: ['debowerify']
