@@ -8,6 +8,8 @@ describe('caplog-controller', function() {
   var $httpBackend;
   var $scope;
 
+  /*global describe, it, before, beforeEach, after, afterEach */
+
   beforeEach(angular.mock.module('caplogApp'));
 
   beforeEach(angular.mock.inject(function($rootScope, $controller) {
@@ -32,44 +34,44 @@ describe('caplog-controller', function() {
     });
 
     it('should have a getAll function', function() {
-      $httpBackend.expectGET('api/v1/caplog').respond(200, [{noteBody: 'test note'}]); //test on $scope
+      $httpBackend.expectGET('api/v1/caplog').respond(200, [{caplogBody: 'test caplog'}]); //test on $scope
 
       var caplogController = $ControllerConstructor('caplogController', {$scope: $scope});
       $scope.getAll();
       $httpBackend.flush();
 
-      expect ($scope.caplog[0].noteBody).toBe('test note');
+      expect ($scope.caplog[0].caplogBody).toBe('test caplog');
     });
 
 
     it('should be able to save', function() {
-      $httpBackend.expectPOST('/api/v1/caplog').respond(200, {_id: 1, noteBody: 'test note'});
+      $httpBackend.expectPOST('/api/v1/caplog').respond(200, {_id: 1, caplogBody: 'test caplog'});
 
       var caplogController = $ControllerConstructor('caplogController', {$scope: $scope});
-      $scope.create({noteBody: 'test note'});
+      $scope.create({caplogBody: 'test caplog'});
       $httpBackend.flush();
 
       expect($scope.caplog[0]._id).toBe(1);
     });
 
-    it('should be able to save note changes', function() {
+    it('should be able to save caplog changes', function() {
       $httpBackend.expectPUT('/api/v1/caplog/1').respond(200);
 
       var caplogController = $ControllerConstructor('caplogController', {$scope: $scope});
-      var note = {noteBody: 'test note', _id: 1, editing: true};
-      $scope.save(note);
+      var caplog = {caplogBody: 'test caplog', _id: 1, editing: true};
+      $scope.save(caplog);
       $httpBackend.flush();
 
-      expect(note.editing).toBe(false);
+      expect(caplog.editing).toBe(false);
     });
 
-    it('should be able to delete a note', function() {
+    it('should be able to delete a caplog', function() {
       $httpBackend.expectDELETE('/api/v1/caplog/1').respond(200);
 
       var caplogController = $ControllerConstructor('caplogController', {$scope: $scope});
-      var note = {noteBody: 'test note', _id: 1, editing: true};
-      $scope.caplog.push(note);
-      $scope.remove(note);
+      var caplog = {caplogBody: 'test caplog', _id: 1, editing: true};
+      $scope.caplog.push(caplog);
+      $scope.remove(caplog);
       $httpBackend.flush();
 
       expect($scope.caplog.length).toBe(0);
