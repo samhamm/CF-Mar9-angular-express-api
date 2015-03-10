@@ -8,8 +8,6 @@ describe('caplog-controller', function() {
   var $httpBackend;
   var $scope;
 
-  /*global describe, it, before, beforeEach, after, afterEach */
-
   beforeEach(angular.mock.module('caplogApp'));
 
   beforeEach(angular.mock.inject(function($rootScope, $controller) {
@@ -24,7 +22,7 @@ describe('caplog-controller', function() {
   });
 
   describe('REST requests', function() {
-    before(angluar.mock.inject(function(_$httpBackend_) {
+    before(angular.mock.inject(function(_$httpBackend_) {
       $httpBackend = _$httpBackend_;
     }));
 

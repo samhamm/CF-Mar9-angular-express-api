@@ -7,7 +7,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     files: [
-      'test/karma-tests/angular-testbundle.js'
+      'test/karma-tests/karma-test-bundle.js'
     ],
 
     exclude: [],

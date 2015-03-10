@@ -17,7 +17,10 @@ module.exports = function(grunt) {
             describe: true,
             it: true,
             before: true,
-            after: true
+            after: true,
+            angular: true,
+            beforeEach: true,
+            expect: true
           }
         },
         src: ['Gruntfile.js', 'app/**/*.js', 'routes/**/*.js', 'models/**/*.js', 'test/**/*.js', '*.js']
