@@ -13,7 +13,7 @@ var router = express.Router();
 
 caplogsRoutes(router);
 
-app.use('/api/v1', router);
+app.use('/caplogs', router);
 
 http.createServer(app).listen(process.env.PORT || 3000, function() {
   console.log('server listening on port ' + (process.env.PORT || 3000));
