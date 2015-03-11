@@ -17,8 +17,5 @@
 **/test-bundle.js
 **/*bundle*
 
-# Images, for now...
-**/img/
-
-# Databases
+# App Database
 db-caplogs-dev/
