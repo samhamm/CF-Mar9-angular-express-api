@@ -2,7 +2,7 @@
 var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
-var caplogsRoutes = require('./routes/caplogs-routes');
+var caplogsRoutes = require('./routes/captains-logs-routes');
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/capslogsApp-development');
 

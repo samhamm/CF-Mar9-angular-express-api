@@ -1,5 +1,5 @@
 //*****************
-//caplogs-routes.js
+//captains-logs-routes.js
 //*****************
 
 'use strict';
