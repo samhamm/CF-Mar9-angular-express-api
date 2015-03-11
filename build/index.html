@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Captain's Log...</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body data-ng-app="caplogsApp">
+  <img src="img/logo.png" align="center">
+  <main data-ng-controller="caplogsController" data-ng-init="getAll()">
+    <h1>Captain's Logs</h1>
+    <form name="newCaplogName">
+      <label for="newCaplogBody">
+        <p><i>I am, Captain... JamesTKirk...of...the, Starship; Enterprise.</p>
+        <p>These... are, my... ... ...logs.</i></p>
+      </label>
+      <input type="text" id="newCaplogBody" data-ng-model="newCaplog.caplogBody">
+      <button type="submit" data-ng-click="create(newCaplog)">Save New Log</button>
+    </form>
+    <ul data-ng-repeat="caplog in caplogs">
+      <li>
+        {{ caplog.caplogBody }}
+        <form data-ng-if="caplog.editing">
+          <label for="caplog{{caplog._id}}">Edit Log</label>
+          <input type="text" id="caplog{{caplog._id}}" data-ng-model="caplog.caplogBody">
+          <button type="submit" data-ng-click="save(caplog)">Save Changes</button>
+          <button type="button" data-ng-click="editToggle(caplog)">Cancel</button>
+        </form>
+        <button data-ng-click="editToggle(caplog)" data-ng-if="!caplog.editing">Edit Log</button>
+        <button data-ng-click="remove(caplog)">Delete Log</button>
+      </li>
+    </ul>
+  </main>
+
+  <script src="bundle.js"></script>
+</body>
+</html>
